@@ -29,11 +29,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'todo',
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
 ]
-
+# connection to the react
+CORS_ALLOWED_ORIGINS=['http://localhost:5173']
+# CORS_ALLOW_ALL_ORIGINS = True
 APPEND_SLASH = False
 
 CSRF_TRUSTED_ORIGINS = ['http://localhost:8000']
@@ -47,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'

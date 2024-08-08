@@ -1,0 +1,58 @@
+.todo-container {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-container h2 {
+    text-align: center;
+    color: #333;
+}
+
+.todo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.todo-form .MuiTextField-root {
+    width: 100%;
+}
+
+.todo-form .MuiButton-root {
+    align-self: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+li span {
+    font-size: 1em;
+    color: #666;
+}
+
+li input[type="checkbox"] {
+    transform: scale(1.5);
+}
