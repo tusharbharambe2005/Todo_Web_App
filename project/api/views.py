@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt#Cross-Site Request Forgery
 import json
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
@@ -23,7 +23,7 @@ def register_view(request):
             user = User.objects.create_user(username=username,email=email, password=password)
             return JsonResponse({"message": "User registered successfully"}, status=201)
             
-        except json.JSONDecodeError:
+        except json.JSONDecodeError:#syntax error,invalid chararecter,invlati data type
             return JsonResponse({"error": "username,email,password:-Invalid JSON."}, status=400)
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=500)

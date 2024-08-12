@@ -22,7 +22,7 @@ const CreateTodo = () => {
         const token = localStorage.getItem('access_token');
         try {
             const response = await axios.get(
-                "http://127.0.0.1:8000/todo/todos/",//api to fetch todo
+                "http://127.0.0.1:8000/todo/display/",//api to fetch todo or used http://127.0.0.1:8000/todo/todos/
                 {
                     headers: {
                         Authorization: `Bearer ${token}`//set the headers to Authorizations token

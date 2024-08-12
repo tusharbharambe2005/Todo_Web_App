@@ -14,9 +14,7 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('display/',DispalyUser.as_view(),name="display user"),
-    path('logout/',LogoutView.as_view(),name='logout'),
-    
-    path('user_delete/', user_delete, name='user_delete'),
+    path('user_delete/', user_delete, name='user_delete'),#not implemennt
     
 ]
 #{"username": "tushar","password": "admin@123"}
