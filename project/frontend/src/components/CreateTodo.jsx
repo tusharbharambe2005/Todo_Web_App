@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "axios";//make HTTP request to API. it allows you to easily send and receive data from backend server
 import { useEffect, useState } from "react";
 //import all material
 import TextField from '@mui/material/TextField';
@@ -10,7 +10,7 @@ import './CreateTodo.css';
 
 const CreateTodo = () => {
     //create State
-    const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+    
     const [title, setTitle] = useState("");//this are set the Title
     const [description, setDescription] = useState("");//this are set the Descriptions
     const [todos, setTodos] = useState([]);//this are set the All todo 
@@ -40,7 +40,7 @@ const CreateTodo = () => {
         }
     };
 
-    useEffect(() => {
+    useEffect(() => {//hook
         fetchTodos();
     }, []);// you tell React that your component needs to do something after render
 
@@ -49,7 +49,7 @@ const CreateTodo = () => {
         e.preventDefault();
         const token = localStorage.getItem('access_token');
         try {
-            const response = await axios.post(
+            const response = await axios.post(//axios is HTTP requests and fetch data from APIs. 
                 "http://127.0.0.1:8000/todo/todos/",
                 {
                     title,
@@ -59,11 +59,11 @@ const CreateTodo = () => {
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/json',//used when sending data to a server in JSON format.
                     },
                 }
             );
-            setTodos([...todos, response.data]);//set all data to Todos then display task card
+            setTodos([...todos, response.data]);//set all data to Todos then display task card('...todos)create new array including all existing element from the todos
             setTitle('');
             setDescription('');
             console.log("Todo added:", response.data);
@@ -92,7 +92,7 @@ const CreateTodo = () => {
                 
             );
             console.log("Todo updated:")
-            setTodos(todos.map(t => t.id === id ? response.data : t));
+            setTodos(todos.map(t => t.id === id ? response.data : t));//map function creates a new array by transforming each element in the original array.
             setError(null);
             console.log("Todo updated:", response.data);
         } catch (err) {

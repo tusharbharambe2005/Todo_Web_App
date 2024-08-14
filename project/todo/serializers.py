@@ -6,6 +6,6 @@ class todo_serializers(serializers.ModelSerializer):
     class Meta:
         model = todo_list_model
         fields = "__all__"
-    def get_user(self,obj):
+    def get_user(self,obj):#Custom Method
         return obj.user.username
        

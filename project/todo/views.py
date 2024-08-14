@@ -19,6 +19,7 @@ class TodoDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = todo_list_model.objects.all()
     serializer_class = todo_serializers
     lookup_field = 'id'
+    
 class Todo_Update(generics.UpdateAPIView):
     queryset = todo_list_model.objects.all()
     serializer_class = todo_serializers

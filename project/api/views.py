@@ -10,8 +10,8 @@ from rest_framework_simplejwt.tokens import RefreshToken,AccessToken
 from django.contrib.auth import authenticate
 from rest_framework import status
 from rest_framework import generics
-@csrf_exempt
-def register_view(request):
+@csrf_exempt#CSRF protection is a security feature that helps prevent attacks where a malicious website tricks a user into performing actions on another site   
+def register_view(request):#This function handles incoming requests related to user registration.
     if request.method == "POST":
         try:
             data = json.loads(request.body)
